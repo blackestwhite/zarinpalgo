@@ -1,5 +1,5 @@
 # ZarinpalGo 
-unofficial Zarinpal SDK for Go
+Unofficial Zarinpal REST API client for Go
 
 # Installation
 ```bash
