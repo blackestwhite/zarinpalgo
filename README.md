@@ -1,4 +1,7 @@
-# ZarinpalGo 
+# ZarinpalGo
+
+[![Go Test](https://github.com/blackestwhite/zarinpalgo/actions/workflows/test.yml/badge.svg)](https://github.com/blackestwhite/zarinpalgo/actions/workflows/test.yml)
+
 Unofficial Zarinpal REST API integration for Go
 
 ## Installation
