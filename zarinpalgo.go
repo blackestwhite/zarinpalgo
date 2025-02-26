@@ -89,10 +89,20 @@ const (
 
 // New creates a new Zarinpal client with the given merchant ID
 func New(merchantID string) *Zarinpal {
+	return NewWithMode(merchantID, false)
+}
+
+// NewWithMode creates a new Zarinpal client with the given merchant ID and sandbox mode
+func NewWithMode(merchantID string, sandbox bool) *Zarinpal {
+	baseURL := "https://payment.zarinpal.com"
+	if sandbox {
+		baseURL = "https://sandbox.zarinpal.com"
+	}
+
 	return &Zarinpal{
 		MerchantID:     merchantID,
-		APIBaseURL:     "https://payment.zarinpal.com/pg/v4/payment/",
-		PaymentBaseURL: "https://payment.zarinpal.com/pg/StartPay/",
+		APIBaseURL:     baseURL + "/pg/v4/payment/",
+		PaymentBaseURL: baseURL + "/pg/StartPay/",
 		client: &http.Client{
 			Timeout: 30 * time.Second,
 		},
